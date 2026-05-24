@@ -69,7 +69,7 @@ class Order {
     bool found = false;
     // String itemName;
 
-    print("Looking for: '$name'"); // shows exactly what was passed in
+    print("Looking for: '$name'");
     print("Items in order:");
 
     for (int i = 0; i < _items.length; i++) {
@@ -91,25 +91,18 @@ class Order {
   }
 
   void printBill() {
-    print("Customer: $_customerName");
+    print("\nCustomer: $_customerName");
 
     for (int i = 0; i < _items.length; i++) {
       _items[i].displayMethod();
     }
 
-    print("Total $_total");
+    print("Total ₦$_total");
 
     // _items.clear();
     // _total = 0;
   }
 }
-
-/**
- * Remove Item Method
-    Create a method removeItem(String name) that searches _items by name using a loop:
-    If found, subtract the item price from _total, remove it from the list, and print a success message
-    If not found, print an error message  
- */
 
 void main() {
   Food egusiSoup = Food('Egusi Soup', 3500, 'Main Course', 'large');
@@ -127,13 +120,16 @@ void main() {
     'medium',
   );
 
-  Order order = Order("Daniel"); // change to get customer name
+  stdout.write("Please Enter Your Name: ");
+  String? customerName = stdin.readLineSync();
+
+  Order order = Order(customerName!); // change to get customer name
 
   void printMenu() {
     // Used Ai to structure this into table format
     print("\n=== MENU ===");
     print(
-      "${'#'.padRight(5)}${'Name'.padRight(20)}${'Category'.padRight(15)}${'Price'.padRight(10)}${'Size'.padRight(10)}${'Temperature'.padRight(10)}",
+      "${'#'.padRight(5)}${'Name'.padRight(20)}${'Category'.padRight(15)}${'Price(₦)'.padRight(10)}${'Size'.padRight(10)}${'Temperature'.padRight(10)}",
     );
     print("-" * 72);
     stdout.write("1.   ");
@@ -158,7 +154,7 @@ void main() {
     print("2. Add Item to Order");
     print("3. Remove Item from Order");
     print("4. Print Bill");
-    print("5. Exit");
+    print("5. Exit\n");
     stdout.write("=> ");
     String? choice = stdin.readLineSync();
 
@@ -173,9 +169,9 @@ void main() {
         printMenu();
         print("0. Done - Go back to main menu");
 
-        stdout.writeln("\nEnter Order Number: ");
+        stdout.write("\nEnter Order Number: ");
         String? itemChoice = stdin.readLineSync();
-        print(itemChoice);
+        // print(itemChoice);
 
         if (itemChoice == "0") {
           orderInProgress = false;
@@ -223,5 +219,7 @@ void main() {
  * ToDo
  * Make remove item take number, so that I can check via index, because user might not type name exactly.
  * Make add order loop till they choose to exit - Done
- * Add Naira symbol to wherever there's money printed
+ * Add Naira symbol to wherever there's money printed - Done
+ * Collect customer name dynamically - Done
+ * Add Comments to every major code block
  */
