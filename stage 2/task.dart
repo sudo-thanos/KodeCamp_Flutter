@@ -69,6 +69,9 @@ class Order {
     bool found = false;
     // String itemName;
 
+    print("Looking for: '$name'"); // shows exactly what was passed in
+    print("Items in order:");
+
     for (int i = 0; i < _items.length; i++) {
       if (_items[i].name == name) {
         String itemName = _items[i].name;
@@ -96,8 +99,8 @@ class Order {
 
     print("Total $_total");
 
-    _items.clear();
-    _total = 0;
+    // _items.clear();
+    // _total = 0;
   }
 }
 
@@ -109,12 +112,20 @@ class Order {
  */
 
 void main() {
-  Food jollofRice = Food('Jollof Rice', 2500, 'Main Course', 'large');
-  Food friedRice = Food('Fried Rice', 2200, 'Main Course', 'medium');
-  Food pepperSoup = Food('Pepper Soup', 3000, 'Dessert', 'small');
-  Drink coldCoke = Drink('Coke', 500, 'Fizzy', 'cold', 'small');
-  Drink hotTea = Drink('Tea', 400, 'tea', 'hot', 'medium');
-  Drink coldJuice = Drink('Orange Juice', 700, 'juice', 'cold', 'large');
+  Food egusiSoup = Food('Egusi Soup', 3500, 'Main Course', 'large');
+  Food friedPlantain = Food('Fried Plantain', 1500, 'Side Dish', 'medium');
+  Food spaghetti = Food('Spaghetti', 2800, 'Main Course', 'large');
+  Food noodles = Food('Noodles', 1800, 'Main Course', 'medium');
+
+  Drink fanta = Drink('Fanta', 500, 'Fizzy', 'cold', 'small');
+  Drink water = Drink('Water', 200, 'Beverage', 'hot', 'large');
+  Drink pineappleJuice = Drink(
+    'Pineapple Juice',
+    800,
+    'Juice',
+    'cold',
+    'medium',
+  );
 
   Order order = Order("Daniel"); // change to get customer name
 
@@ -126,17 +137,19 @@ void main() {
     );
     print("-" * 72);
     stdout.write("1.   ");
-    jollofRice.displayMethod();
+    egusiSoup.displayMethod();
     stdout.write("2.   ");
-    friedRice.displayMethod();
+    friedPlantain.displayMethod();
     stdout.write("3.   ");
-    pepperSoup.displayMethod();
+    spaghetti.displayMethod();
     stdout.write("4.   ");
-    coldCoke.displayMethod();
+    noodles.displayMethod();
     stdout.write("5.   ");
-    hotTea.displayMethod();
+    fanta.displayMethod();
     stdout.write("6.   ");
-    coldJuice.displayMethod();
+    water.displayMethod();
+    stdout.write("7.   ");
+    pineappleJuice.displayMethod();
   }
 
   while (true) {
@@ -154,32 +167,42 @@ void main() {
     if (choice == "1") {
       printMenu();
     } else if (choice == "2") {
-      printMenu();
+      bool orderInProgress = true;
 
-      stdout.writeln("\nEnter order number: ");
-      String? itemChoice = stdin.readLineSync();
-      print(itemChoice);
+      while (orderInProgress == true) {
+        printMenu();
+        print("0. Done - Go back to main menu");
 
-      if (itemChoice == "1") {
-        order.addItem(jollofRice);
-        print("Jollof Rice added to order");
-      } else if (itemChoice == "2") {
-        order.addItem(friedRice);
-        print("Fried Rice added to order");
-      } else if (itemChoice == "3") {
-        order.addItem(pepperSoup);
-        print("Pepper Soup added to order");
-      } else if (itemChoice == "4") {
-        order.addItem(coldCoke);
-        print("Cold Coke added to order");
-      } else if (itemChoice == "5") {
-        order.addItem(hotTea);
-        print("Hot Tea added to order");
-      } else if (itemChoice == "6") {
-        order.addItem(coldJuice);
-        print("Cold Juice added to order");
-      } else {
-        print("Invalid order option!");
+        stdout.writeln("\nEnter Order Number: ");
+        String? itemChoice = stdin.readLineSync();
+        print(itemChoice);
+
+        if (itemChoice == "0") {
+          orderInProgress = false;
+        } else if (itemChoice == "1") {
+          order.addItem(egusiSoup);
+          print("Egusi Soup added to order");
+        } else if (itemChoice == "2") {
+          order.addItem(friedPlantain);
+          print("Fried Plantain added to order");
+        } else if (itemChoice == "3") {
+          order.addItem(spaghetti);
+          print("Spaghetti added to order");
+        } else if (itemChoice == "4") {
+          order.addItem(noodles);
+          print("Noodles added to order");
+        } else if (itemChoice == "5") {
+          order.addItem(fanta);
+          print("Fanta added to order");
+        } else if (itemChoice == "6") {
+          order.addItem(water);
+          print("Water Juice added to order");
+        } else if (itemChoice == "7") {
+          order.addItem(pineappleJuice);
+          print("Pineapple Juice added to order");
+        } else {
+          print("Invalid order option!");
+        }
       }
     } else if (choice == "3") {
       stdout.write("Enter item number to remove: ");
@@ -196,6 +219,9 @@ void main() {
   }
 }
 
-// Make remove item take number, so that I can check via index, because user might not type name exactly.
-
-// Make add order loop till they choose to exit
+/**
+ * ToDo
+ * Make remove item take number, so that I can check via index, because user might not type name exactly.
+ * Make add order loop till they choose to exit - Done
+ * Add Naira symbol to wherever there's money printed
+ */
