@@ -1,6 +1,11 @@
 // import 'learn.dart';
 import 'dart:io';
 
+/**
+ * THis is the Super class that all sub classes extends from.
+ * It includes the name, price and category, all private, but exposed with getters. 
+ * Also includes a displayMethod() method.
+ */
 class MenuItem {
   String _name;
   double _price;
@@ -19,6 +24,11 @@ class MenuItem {
   }
 }
 
+/**
+ * Subclass inheriting properties from MenuItem, but also adds
+ * its own property, portionSize, with an override that prints extra properties
+ * in the displayMethod.
+ */
 class Food extends MenuItem {
   String portionSize;
 
@@ -33,6 +43,11 @@ class Food extends MenuItem {
   }
 }
 
+/**
+ * Subclass inheriting properties from MenuItem, but also adds
+ * its own properties, temperature and size with an override that prints the extra properties
+ * in the displayMethod.
+ */
 class Drink extends MenuItem {
   // bool isCold;
   String temperature; // Cole or hot
@@ -49,6 +64,13 @@ class Drink extends MenuItem {
   }
 }
 
+/**
+ * Order class is complex. It has properties and a list that tracks the menu
+ * items in the order. It includes methosd that adds an item to the List, a method
+ * that removes items from the array, which prints an error if item is not found,
+ * a printBill function that prints the user's bill and clears the session for another
+ * user.
+ */
 class Order {
   String _customerName;
   List<MenuItem> _items = [];
@@ -99,12 +121,15 @@ class Order {
 
     print("Total ₦$_total");
 
-    // _items.clear();
-    // _total = 0;
+    _items.clear();
+    _total = 0;
   }
 }
 
 void main() {
+  /**
+   * THis is the list of menu items that my restruant has to offer
+   */
   Food egusiSoup = Food('Egusi Soup', 3500, 'Main Course', 'large');
   Food friedPlantain = Food('Fried Plantain', 1500, 'Side Dish', 'medium');
   Food spaghetti = Food('Spaghetti', 2800, 'Main Course', 'large');
@@ -120,11 +145,16 @@ void main() {
     'medium',
   );
 
+  // Gets users name dynamically. user enters his name on startup.
   stdout.write("Please Enter Your Name: ");
   String? customerName = stdin.readLineSync();
 
-  Order order = Order(customerName!); // change to get customer name
+  Order order = Order(customerName!);
 
+  /**
+   * Rather than printing my menu everytime, I made it a function tht i can
+   * call to print all my menu items anytime
+   */
   void printMenu() {
     // Used Ai to structure this into table format
     print("\n=== MENU ===");
@@ -149,6 +179,10 @@ void main() {
   }
 
   while (true) {
+    /**
+     * This is the main menu, where the customer can selecct an input or exit the 
+     * program.
+     */
     print("\n=== RESTAURANT ORDER SYSTEM ===");
     print("1. View Menu");
     print("2. Add Item to Order");
@@ -160,6 +194,14 @@ void main() {
 
     // print(choice);
 
+    /**
+     * This checks the users choices, and performs relevant operations based on 
+     * the choice of the user. I also added a while loop so that the user can 
+     * place all their orders before every goign back to the main menu. It also
+     * prints an error if the selection is invalid. 
+     * 
+     * 0 - Takes you back to main menu.
+     */
     if (choice == "1") {
       printMenu();
     } else if (choice == "2") {
