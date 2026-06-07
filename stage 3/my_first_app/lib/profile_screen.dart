@@ -288,21 +288,16 @@ class ProfileScreen extends StatelessWidget {
                                 ),
                                 const SizedBox(width: 4),
 
-                                Positioned(
-                                  bottom: 12,
-                                  right: 12,
-                                  child: Container(
-                                    padding: const EdgeInsets.all(6),
-                                    decoration: const BoxDecoration(
-                                      color: Colors.white,
-                                      shape: BoxShape.circle,
-                                    ),
-                                    child: Icon(
-                                      Icons
-                                          .bookmark, // ← BOOKMARK instead of person
-                                      size: 12,
-                                      color: Colors.grey[600],
-                                    ),
+                                Container(
+                                  padding: const EdgeInsets.all(6),
+                                  decoration: const BoxDecoration(
+                                    color: Colors.white,
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Icon(
+                                    Icons.bookmark,
+                                    size: 12,
+                                    color: Colors.grey[600],
                                   ),
                                 ),
                               ],
@@ -420,20 +415,16 @@ class ProfileScreen extends StatelessWidget {
                                 ),
                                 const SizedBox(width: 4),
 
-                                Positioned(
-                                  bottom: 12,
-                                  right: 12,
-                                  child: Container(
-                                    padding: const EdgeInsets.all(6),
-                                    decoration: const BoxDecoration(
-                                      color: Colors.white,
-                                      shape: BoxShape.circle,
-                                    ),
-                                    child: Icon(
-                                      Icons.bookmark,
-                                      size: 12,
-                                      color: Colors.grey[600],
-                                    ),
+                                Container(
+                                  padding: const EdgeInsets.all(6),
+                                  decoration: const BoxDecoration(
+                                    color: Colors.white,
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Icon(
+                                    Icons.bookmark,
+                                    size: 12,
+                                    color: Colors.grey[600],
                                   ),
                                 ),
                               ],

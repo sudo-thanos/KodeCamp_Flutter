@@ -12,6 +12,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   late Timer _timer;
 
+  //Navigates to Profile screen after 3 seconds
   @override
   void initState() {
     super.initState();
@@ -23,12 +24,14 @@ class _SplashScreenState extends State<SplashScreen> {
     });
   }
 
+  // cancels the timer after nvigation
   @override
   void dispose() {
     _timer.cancel();
     super.dispose();
   }
 
+  // This is the main Splash screen widget
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,11 +47,11 @@ class _SplashScreenState extends State<SplashScreen> {
                 color: Colors.red[400],
                 borderRadius: BorderRadius.circular(20),
               ),
-              child: Icon(Icons.restaurant, color: Colors.white, size: 60),
+              child: Image.asset('assets/splash.png', fit: BoxFit.contain),
             ),
             const SizedBox(height: 30),
             const Text(
-              'Cookpedia',
+              'Book\'n Eat',
               style: TextStyle(
                 fontSize: 32,
                 fontWeight: FontWeight.bold,
