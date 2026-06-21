@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class NotificationTab extends StatelessWidget {
   const NotificationTab({super.key});
 
+  // Placeholder page
   @override
   Widget build(BuildContext context) {
     return Container(

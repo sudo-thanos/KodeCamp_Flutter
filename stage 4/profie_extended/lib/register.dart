@@ -9,6 +9,7 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
+  // Form field controllers
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -16,6 +17,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       TextEditingController();
   final TextEditingController _birthDateController = TextEditingController();
 
+  // Cleans up the form entries when the widget is destroyed
   @override
   void dispose() {
     _emailController.dispose();
@@ -26,6 +28,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
     super.dispose();
   }
 
+  // Just like login, checkes if the fields are empty, if empty it returns
+  // If not, redirects to Main Screen. It also carries the name and email inputs
+  // and passes them to the main Screen which inturn passes them to the respective pages
   void _register() {
     String email = _emailController.text;
     String password = _passwordController.text;

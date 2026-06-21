@@ -4,6 +4,8 @@ class Home extends StatelessWidget {
   final String email;
   const Home({required this.email, super.key});
 
+  // This is the home page. Displays a welome message with the user email passed
+  //  down to the page.
   @override
   Widget build(BuildContext context) {
     return Container(

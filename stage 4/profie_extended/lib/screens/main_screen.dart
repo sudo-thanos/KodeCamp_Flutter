@@ -14,6 +14,8 @@ class MainScreen extends StatefulWidget {
   State<MainScreen> createState() => _MainScreenState();
 }
 
+// This class handles the tab Ui and controls. From setup to styling. Its like the
+// entry point for the whole tab pages.
 class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
 

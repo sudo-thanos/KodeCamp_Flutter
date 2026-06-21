@@ -5,6 +5,8 @@ class ProfileScreen extends StatelessWidget {
   final String? email;
   const ProfileScreen({this.name, this.email, Key? key}) : super(key: key);
 
+  // Old profile page with network image, and name and email variables passed
+  // down from either login or register pages
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -13,6 +13,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
+  // Cleans up the form entries when the widget is destroyed
   @override
   void dispose() {
     _emailController.dispose();
@@ -20,6 +21,8 @@ class _LoginScreenState extends State<LoginScreen> {
     super.dispose();
   }
 
+  // Login function checks if the fields are empty and returns. If not empty
+  // it navigates to Main Screen, which has the tabs and each page.
   void _login() {
     String email = _emailController.text;
     String password = _passwordController.text;
