@@ -9,7 +9,7 @@ This is a recipe app that lists and displays recipe of different meals. Currentl
 
 ## How to Run
 
-1. Clone my repository - https://github.com/sudo-thanos/KodeCamp_Flutter/tree/main/stage%205/api_integration
+1. Clone my repository - https://github.com/sudo-thanos/KodeCamp_Flutter/tree/main/stage%206/bug_fixes
 2. Install dependencies:
 
 ```bash
