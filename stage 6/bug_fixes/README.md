@@ -35,8 +35,9 @@ This is a recipe app that lists and displays recipe of different meals. Currentl
 
 ## UI Design Choice
 
-For my UI design choice, i chose the horizontal layout so as to economize space. I sketched how I want the UI to look on paper first before working on it.
-Since there are not so much detail in the initial home page, there's no point making my cards big, so the image to the left, and the contents to the right.
+Still following the same design concept of the main app, but used Ai to spice things up a bit. I think I'm loving how this app is coming together. I'm proud!!
+
+I think i'm starting to like less rounded corners though. I might change all the borderRadius accross board.
 
 ## Screenshots
 
