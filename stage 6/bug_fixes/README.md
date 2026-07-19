@@ -4,12 +4,8 @@ This is a recipe app that lists and displays recipe of different meals. Currentl
 
 ## New Implementations
 
-- **Splash Screen** - Animated app intro,
-- **Onboarding** - 3-slide Onboarding screens talking about the app,
-- **Authentication** - Login & Register with validation - Just empty field error validation for now,
-- **Recipe Fetch** - Live data from dummyjson.com API,
-- **Bottom Navigation** - 5 tabs - Maintained the layout of the previous task, so the recipies are rendered in the /home,
-- **State Management** - Built with GetX.
+- **Profile Screen** - Fixed the bugs in the provided codebase and added it to my app,
+- **Edit Profile Screen** - Worked on the edit profile page too, and made data persistent accross sessions,
 
 ## How to Run
 
