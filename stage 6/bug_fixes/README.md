@@ -40,6 +40,7 @@ Since there are not so much detail in the initial home page, there's no point ma
 
 ## Screenshots
 
-![Splash Screen](screenshots/splash.jpg)
-![Login Screen](screenshots/login.jpg)
-![Home Screen](screenshots/home.jpg)
+![Profile Screen](screenshots/profile.png)
+![Edit Profile Screen](screenshots/edit_profile.png)
+
+<!-- ![Home Screen](screenshots/home.jpg) -->
