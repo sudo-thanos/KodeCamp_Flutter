@@ -2,6 +2,8 @@
 
 This is a recipe app that lists and displays recipe of different meals. Currently still in development, I'm working my way up.
 
+## NB: I exceeded my free plan for the other account, so I uploaded to another account. Here's the link: https://appetize.io/app/b_mrodeeju5koqfli34fndirew7q
+
 ## New Implementations
 
 - **Profile Screen** - Fixed the bugs in the provided codebase and added it to my app,
