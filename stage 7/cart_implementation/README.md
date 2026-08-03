@@ -6,8 +6,11 @@ This is a recipe app that lists and displays recipe of different meals. Currentl
 
 ## New Implementations
 
-- **Profile Screen** - Fixed the bugs in the provided codebase and added it to my app,
-- **Edit Profile Screen** - Worked on the edit profile page too, and made data persistent accross sessions,
+- **Recipe Detail Screen** - Added a quantity stepper and "Add to Cart" button on top of the existing detail view, with a snackbar confirmation when items get added,
+- **Cart Screen** - Shows every item added, lets you bump quantity up/down per item, swipe or tap to remove, and the total updates live,
+- **Checkout Screen** - Recaps the order and has a delivery details form (name, address, phone) that validates before letting you proceed,
+- **Payment Screen** - Mock payment flow with a loading state, occasionally simulates a failed payment with a Retry button,
+- **Success Screen** - Shows the generated order ID and a recap of what was ordered, "Back to Home" clears the cart,
 
 ## How to Run
 
